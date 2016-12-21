@@ -1,0 +1,106 @@
+/**** Necessário ****/
+Para iniciar o modal no AngularJs é necessário que você tenha o ui-bootstrap.js:
+https://angular-ui.github.io/bootstrap
+
+-------------------------------------------------------------------------------------------------------------------------
+
+/**** Começando a utilizar ****/
+
+1-) Primeiramente é necessário chamar esse arquivo no seu projeto, esse arquivo fica depois do angular.min.js, exemplo:
+<script src="bootstrap/js/ui-bootstrap-tpls-2.2.0.min.js"></script>
+
+**************************************************************************************************************************
+
+2-) No momento em que você cria o seu module com o angular, passe o ui.bootstrap no mesmo, exemplo:
+
+var app= angular.module('MyApp', ['ui.bootstrap']);
+
+**************************************************************************************************************************
+
+3-) Você irá chamar o uibModal no controller que será utilizado, por exemplo:
+
+app.controller( 'Mycontroller_ctrl', ['$scope','$uibModal', function($scope, $uibModal) {
+  #Conteudo diverso desse controlador
+}]);
+
+**************************************************************************************************************************
+
+4-) Para conseguir chamar o modal:
+
+  4.1-) No html é necessário usar o ng-click, chamando a função que irá ser criado no controller, exemplo:
+  *Obs: O valor a ser passado na função é o tamanho do modal, se ele será lg, md, sm ou xs.
+  
+  <button class="btn btn-success" type="button" ng-click="showModal('lg')">
+    Abrir Modal
+  </button>
+  
+  4.2-) No controller Mycontroller_ctrl, é preciso criar uma função para o ng-click
+  
+  $scope.showModal = function( size ) {
+  
+      var modal = $uibModal.open({
+          scope: $scope, //Instancia todo o scope
+          templateUrl: 'myModal.html', //Nome do modal a ser apertado
+          controller: 'Modal', //Controlador ao qual passará a obtecer
+          size: size, //Tamanho do modal
+          resolve: {
+              produto: function() {
+                  return $scope;
+              }
+          }
+      });
+    
+    }
+    
+ **************************************************************************************************************************
+ 
+ 5-) Logo em seguida é necessário criar o controlador do modal, exemplo:
+ 
+ app.controller( 'Modal',function($scope, $uibModalInstance, $http, $timeout){
+	
+	  //Função invocada quando a modal
+    $uibModalInstance.opened.then(function(){
+
+    	//Toda programação
+        
+    });
+
+
+    //Invocado quando o modal e fechado ou abandonado
+    $uibModalInstance.result.then(function () {
+        //modal fechado
+    }, function () {
+        //modal abandonado quando clica em cancelar, no botao fechar ou fora
+    });
+
+
+    // Ao clicar nos botões fechar, cancelar ou clicar fora do modal essa função e chamada
+    $scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+});
+
+**************************************************************************************************************************
+
+6-) No modal é necessário deixa-lo da seguinte forma:
+*Obs: No id é cessário passar o nome do modal definido.
+
+<script type="text/ng-template" id="myModal.html">
+
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel()">&times;</button>
+        <h4 class="modal-title"></h4>
+    </div>
+
+    <div class="modal-body">
+
+        <!-- Conteudo do corpo do modal -->
+
+    </div>
+
+    <div class="modal-footer" ng-controller="Mycontroller_ctrl">
+        <button type="button" class="btn btn-default" ng-click="cancel()">Fechar</button>
+    </div>
+
+</script>
