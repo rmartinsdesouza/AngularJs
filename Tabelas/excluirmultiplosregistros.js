@@ -1,8 +1,9 @@
-Você tem uma tabela onde vai conter varios dados de um cliente por exemplo, e na ultima coluna da tabela você vai ter um checkbox.
+/* Você tem uma tabela onde vai conter varios dados de um cliente por exemplo, e na ultima coluna da tabela você vai ter um checkbox.
 Você quer que quando selecionar o checkbox principal, todos os outros seja selecionado e quando todas as checkbox filhas sejam sejam selecionadas, a checkbox principal fique selecionada e que todas essas informações você consiga recuperar.
 Vamos agora ao código:
+*/
 
-1- É necessário que você faça uma função que você consiga reutilizar varias vezes, dentro do seu arquivo js no controller do angular, você irá colocar o seguinte código.
+/* 1- É necessário que você faça uma função que você consiga reutilizar varias vezes, dentro do seu arquivo js no controller do angular, você irá colocar o seguinte código. */
 
     /*
     * Manipula o uso de checkbox em uma listagem
@@ -59,7 +60,7 @@ Vamos agora ao código:
         return lista.indexOf(chave) > -1;
     };
 
-2 - Após isso já é possível estar utilizando, agora um exemplo no html.
+/* 2 - Após isso já é possível estar utilizando, agora um exemplo no html.
 
 <table>
 
@@ -158,3 +159,5 @@ Vamos agora ao código:
 </table>
 
 3 - Depois de tudo isso, ele irá funcionar normalmente.
+
+*/
