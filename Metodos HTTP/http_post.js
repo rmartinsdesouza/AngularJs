@@ -26,3 +26,12 @@ $http.post('CAMINHODOLINK', dados,{timeout:10000}).success(function(data,status,
 	//console.log(status);
 
 });
+
+/*
+Para recuperar no php por exemplo basta:
+
+Declarar variavel e decodificar o json:
+
+$dadospost = file_get_contents( "php://input" );
+$requisicao = json_decode( $dadospost );
+*/
