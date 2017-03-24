@@ -19,3 +19,10 @@ $http({
   */
 
 });
+
+/*
+Para recuperar o get no php, basta usar:
+
+$dadospost = file_get_contents( "php://input" );
+$requisicao = json_decode( $dadospost );
+*/
