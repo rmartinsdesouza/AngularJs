@@ -1,6 +1,7 @@
 /*
 * É necessário que você baixe todos os arquivos no seguinte link: https://github.com/CrackerakiUA/ui-cropper
 * Nesse link você estará encontrando todas as informações de como estar utilizando.
+* Adiciona o ui-cropper-master/compile/minified/ui-cropper.js no seu script html.
 * Depois de baixado você irá no seu controlador principal e deixará da seguinte maneira:
 */
 
