@@ -7,34 +7,38 @@ angular.module("MyApp").controller("MyApp_ctrl", ["$scope", function(){
 
     //Metodo que adiciona a primeira linha
     $scope.$watch('totalcampos', function(val) {
-        if (val) {
+		
+    	if (val) {
+			
             $scope.counter = new Number(val);
+			
         }
+		
     });
     
     
     
-    /*
-    * Metodo que adiciona a linha, quando clica no botão.
-    * Você pode estar fazendo um switch para aproveitar para mais coisas futuramente.
-    */
-    $scope.adicionaLinha = function( tipo ) {
+	/*
+	* Metodo que adiciona a linha, quando clica no botão.
+	* Você pode estar fazendo um switch para aproveitar para mais coisas futuramente.
+	*/
+	$scope.adicionaLinha = function( tipo ) {
 
-			switch( tipo ){
+		switch( tipo ){
 
-				case 'email':
+			case 'email':
 
-						if( $scope.counter<=4 ){
-			 
-							$scope.counter++;
+					if( $scope.counter<=4 ){
 
-							$scope.adm.emails.push( {"tipoemail":"","email":""} );
+						$scope.counter++;
 
-						}
+						$scope.adm.emails.push( {"tipoemail":"","email":""} );
 
-					break;
+					}
 
-			}
+				break;
+
+		}
 
 	}
     
