@@ -80,6 +80,10 @@ angular.module("MyApp", ['ngAnimate', 'ui.bootstrap']).controller("MyApp_ctrl", 
 *
 *   >
 *
+* <span ng-if="noResults && form_adm_busca.length" class="text-danger"><i class="fa fa-times"></i> Nenhum resultado encontrado!</span>
+*
+* <span ng-if="loadingLocations && form_adm_busca.length"><i class="fa fa-spinner spin"></i> Efetuando busca!</span>
+*
 * </form>
 */
 
