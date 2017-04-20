@@ -1,1 +1,91 @@
+![CSCore Logo](http://hop.ie/talks/angular-intro/images/angularjs.jpeg)
 
+# Utilizando o JCrop #
+
+### Lembrando que é necessário já estar com o angular js em sua página.
+---
+## Para a utilização do JCrop é necessário ter o seguinte plugin:
+
+- [JCrop]
+---
+## Depois de fazer o download do plugin, basta colocar ele na sua página, por exemplo:
+```sh
+<script src="ui-cropper-master/compile/minified/ui-cropper.js"></script>
+```
+---
+## No seu controlador angular, você fará o seguinte:
+```sh
+angular.module( "MyApp", ["uiCropper"] ).controller( "MyApp_ctrl", ["$scope", function(){
+
+    $scope.imagemcrop = "";
+    $scope.minhaimagem = "";
+    
+    $scope.blockingObject = {block:true};
+		$scope.callTestFuntion = function(){
+		$scope.blockingObject.render(function(dataURL){
+		console.log('via render');
+		console.log(dataURL.length);
+		});
+	}
+
+	$scope.blockingObject.callback=function(dataURL){
+		console.log('via function');
+		console.log(dataURL.length);
+	}
+
+
+	var handleFileSelect=function(evt) {
+		var file=evt.currentTarget.files[0];
+		var reader = new FileReader();
+		reader.onload = function (evt) {
+			$scope.$apply(function($scope){
+				$scope.myImage=evt.target.result;
+			});
+		};
+		reader.readAsDataURL(file);
+	};
+	angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
+
+}]);
+```
+---
+Com esse código já é possível estar utilizando o JCrop, agora no HTML você fará assim:
+```sh
+<link rel="stylesheet" type="text/css" href="bdatepicker/build/css/bootstrap-datetimepicker.css">
+
+<script src="moment/moment.js"></script>
+<script src="moment/momentlocale.js"></script>
+<script src="moment-develop/locale/pt-br.js"></script>
+<script src='bdatepicker/src/js/bootstrap-datetimepicker.js'></script>
+```
+---
+E por fim basta chamar a diretiva criada, no meu caso eu criei dentro da basta do angular uma pasta com o nome de diretiva e nela esta a nossa direta.
+```sh
+<script src='angular/diretivas/datepickerDiretiva.js'></script>
+```
+---
+Agora para estar utilizando o mesmo, basta fazer da seguinte maneira em seu input:
+* Adiciona um input para conseguir subir as imagens, adicionadando o id fileInput.
+```sh
+<input type="file" id="fileInput" accept="image/*" class="hidden" />
+```
+---
+* Depois pode estar colocando um botão para recortar a imagem:
+```sh
+<button type="button" ng-click="callTestFuntion()">Cortar</button>
+```
+---
+* Em seguida adiciona uma div com a classe cropArea e dentro dela a imagem que você subiu, no caso estaremos cortando a imagem para 120 x 120:
+```sh
+<div class="cropArea">
+
+  <ui-cropper image="minhaimagem" area-type="rectangle" result-image="imagemcrop" live-view="blockingObject" result-image-size="120" area-init-size="{w:120,h:120}" aspect-ratio="1"></ui-cropper>
+
+</div>
+```
+---
+* Depois disso, basta colocar um img para exibir a imagem recortada:
+```sh
+<img class="img-responsive img-thumbnail" />
+```
+[JCrop]: <https://github.com/CrackerakiUA/ui-cropper>
