@@ -50,21 +50,7 @@ angular.module( "MyApp", ["uiCropper"] ).controller( "MyApp_ctrl", ["$scope", fu
 ```
 ---
 Com esse código já é possível estar utilizando o JCrop, agora no HTML você fará assim:
-```sh
-<link rel="stylesheet" type="text/css" href="bdatepicker/build/css/bootstrap-datetimepicker.css">
 
-<script src="moment/moment.js"></script>
-<script src="moment/momentlocale.js"></script>
-<script src="moment-develop/locale/pt-br.js"></script>
-<script src='bdatepicker/src/js/bootstrap-datetimepicker.js'></script>
-```
----
-E por fim basta chamar a diretiva criada, no meu caso eu criei dentro da basta do angular uma pasta com o nome de diretiva e nela esta a nossa direta.
-```sh
-<script src='angular/diretivas/datepickerDiretiva.js'></script>
-```
----
-Agora para estar utilizando o mesmo, basta fazer da seguinte maneira em seu input:
 * Adiciona um input para conseguir subir as imagens, adicionadando o id fileInput.
 ```sh
 <input type="file" id="fileInput" accept="image/*" class="hidden" />
