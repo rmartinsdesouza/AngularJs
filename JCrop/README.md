@@ -75,8 +75,8 @@ Com esse código já é possível estar utilizando o JCrop, agora no HTML você 
 <img class="img-responsive img-thumbnail" />
 ```
 ---
-* Observação para utilizar a área de corte em proporção em relação ao cropArea:
-1 - Dividimos o comprimento (width) pela altura (height) do cropArea, assim obtemos o valor para aplicar no atributo aspect-ratio.
+# Observação para utilizar a área de corte em proporção em relação ao cropArea:
+* Dividimos o comprimento (width) pela altura (height) do cropArea, assim obtemos o valor para aplicar no atributo aspect-ratio.
 - Exemplo: Você quer que a imagem seja salva em 1600x650px, o cropArea esta dividido por 2 (800x325). Basta então fazer: 1600 / 650, que o mesmo irá dar o valor de 2.46153846154, e esse será o seu aspect-ratio. Para ficar mais elecante a ferramenta de corte, ela será divido por 3, 800 / 3 e 325 / 3 = 400x162,5px, sendo colocado no atributo area-init-size.
 
 [JCrop]: <https://github.com/CrackerakiUA/ui-cropper>
