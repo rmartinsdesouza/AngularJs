@@ -16,14 +16,18 @@ app.controller("listagemControlador", function($scope, $http, $timeout){
 
     $scope.dados = [];
     $scope.totalporpagina = "";
+    
+    $scope.$watch('dados', function() {
 
-    $http.get("dados.json").success(function(response){
+		$http.get("dados.json").success(function(response){
 
-        $scope.dados = response;
+			$scope.dados = response;
 
-        $scope.totalporpagina = (response.length)/2;
+			$scope.totalporpagina = (response.length)/2;
 
-    });
+		});
+
+     });
 
 
     $scope.ordenacao = function( nomeordenar ){
