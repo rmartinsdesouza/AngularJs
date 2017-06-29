@@ -6,7 +6,7 @@
 ---
 ## Para a criação, é necessário usar a paginacao.js:
 
-- [JCrop]
+- [COLABORADORES DA PAGINAÇÃO]
 ---
 ## No seu controlador angular app.js, você fará o seguinte:
 ```sh
@@ -135,6 +135,6 @@ app.controller("listagemControlador", function($scope, $http, $timeout){
 </html>
 ```
 
-##Lembrando que é necessário ter um array com os dados ao qual irá rodar no ng-repeat
+* Lembrando que é necessário ter um array com os dados ao qual irá rodar no ng-repeat
 
 [COLABORADORES DA PAGINAÇÃO]: <https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination>
