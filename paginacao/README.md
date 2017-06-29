@@ -36,7 +36,7 @@ app.controller("listagemControlador", function($scope, $http, $timeout){
 });
 ```
 ---
-##Em seu HTML basta fazer a seguinte maneira:
+## Em seu HTML basta fazer a seguinte maneira:
 ```sh
 <!DOCTYPE html>
 <html ng-app="MyApp">
