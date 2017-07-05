@@ -20,7 +20,7 @@ var app = angular.module("MyApp", ['colorpicker']);
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Teste páginação</title>
+	<title>Teste ColorPicker</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/color-picker.min.css">
 </head>
@@ -32,16 +32,16 @@ var app = angular.module("MyApp", ['colorpicker']);
 
 			<div class="col-lg-6" style="margin-top: 20px;">
       
-                <input
+				<input
 
-                    type="text"
-                    class="form-control mar-bot15"
-                    ng-model="site.corsite"
-                    color-picker
-                    color-picker-model="site.corsite"
-                    ng-style="{background: site.corsite}"
+				    type="text"
+				    class="form-control mar-bot15"
+				    ng-model="site.corsite"
+				    color-picker
+				    color-picker-model="site.corsite"
+				    ng-style="{background: site.corsite}"
 
-                >
+				>
 
 			</div>
 			
