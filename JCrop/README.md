@@ -74,6 +74,16 @@ Com esse código já é possível estar utilizando o JCrop, agora no HTML você 
 ```sh
 <img class="img-responsive img-thumbnail" />
 ```
+
+---
+* Precisa ter um CSSda seguinte maneira:
+```sh
+.cropArea {
+	background: #E4E4E4;
+	overflow: hidden;
+	height: 350px;
+}
+```
 ---
 # Observação para utilizar a área de corte em proporção em relação ao cropArea:
 * Dividimos o comprimento (width) pela altura (height) do cropArea, assim obtemos o valor para aplicar no atributo aspect-ratio.
